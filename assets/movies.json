@@ -1,0 +1,25 @@
+
+[
+  {
+    "id": "1",
+    "title": "Avengers: Endgame",
+    "description": "After the devastating events of Avengers: Infinity War, the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore balance to the universe.",
+    "posterUrl": "https://image.tmdb.org/t/p/w500/or06FN3Dka5tukK1e9sl16pB3iy.jpg",
+    "duration": "3h 1m",
+    "genres": ["Action", "Adventure", "Sci-Fi"],
+    "rating": 8.4,
+    "releaseDate": "2019-04-26",
+    "showTimes": ["10:00 AM", "2:30 PM", "6:00 PM", "9:30 PM"]
+  },
+  {
+    "id": "2",
+    "title": "Spider-Man: No Way Home",
+    "description": "Peter Parker is unmasked and no longer able to separate his normal life from the high-stakes of being a super-hero. When he asks for help from Doctor Strange the stakes become even more dangerous, forcing him to discover what it truly means to be Spider-Man.",
+    "posterUrl": "https://image.tmdb.org/t/p/w500/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg",
+    "duration": "2h 28m",
+    "genres": ["Action", "Adventure", "Sci-Fi"],
+    "rating": 8.2,
+    "releaseDate": "2021-12-17",
+    "showTimes": ["11:00 AM", "3:30 PM", "7:00 PM", "10:30 PM"]
+  }
+]

@@ -3,12 +3,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../controllers/movie_controller.dart';
 import '../controllers/booking_controller.dart';
+import '../controllers/my_booking_controller.dart';
 import '../models/booking_model.dart';
+import '../models/my_booking_model.dart';
+import 'home_page.dart';
 
 class ConfirmationPage extends ConsumerWidget {
   final Booking booking;
 
   const ConfirmationPage({super.key, required this.booking});
+
+String generateId() => DateTime.now().millisecondsSinceEpoch.toString();
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -49,10 +54,23 @@ class ConfirmationPage extends ConsumerWidget {
                 const SizedBox(height: 24),
                 ElevatedButton(
                   onPressed: () {
+
+                      // When adding a booking:
+                      final newBooking = MyBooking(
+                        bookId: generateId(),
+                        movieId: movie.id,
+                        movieName: movie.title,
+                        showTime: booking.showTime,
+                        seatIds: booking.seatIds,
+                        seat: booking.seatIds.length,
+                        amount: booking.totalPrice,
+                      );
+                      
+                    ref.read(myBookingNotifierProvider.notifier).addBooking(newBooking);
                     // Reset selected seats
-                    ref.read(selectedSeatsProvider.notifier).state = [];
-                    ref.read(selectedShowTimeProvider.notifier).state = null;
-                    Navigator.popUntil(context, (route) => route.isFirst);
+                     ref.read(selectedSeatsProvider.notifier).state = [];
+                     //ref.read(selectedShowTimeProvider.notifier).state = null;
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePage()));
                   },
                   child: const Text('Back to Home'),
                 ),

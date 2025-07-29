@@ -14,6 +14,24 @@ class Seat {
     this.isSelected = false,
   });
 
+
+  // Helper method to create a copy with modified fields
+  Seat copyWith({
+    String? id,
+    String? row,
+    int? number,
+    bool? isAvailable,
+    bool? isSelected,
+  }) {
+    return Seat(
+      id: id ?? this.id,
+      row: row ?? this.row,
+      number: number ?? this.number,
+      isAvailable: isAvailable ?? this.isAvailable,
+      isSelected: isSelected ?? this.isSelected,
+    );
+  }
+
   factory Seat.fromJson(Map<String, dynamic> json) {
     return Seat(
       id: json['id'],

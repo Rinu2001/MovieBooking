@@ -98,6 +98,10 @@ class BookingPage extends ConsumerWidget {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     Text(
+                      'Show Time: $showTime',
+                      style: const TextStyle(fontSize: 16),
+                    ),
+                    Text(
                       'Selected Seats: ${selectedSeats.map((s) => '${s.row}${s.number}').join(', ')}',
                       style: const TextStyle(fontSize: 16),
                     ),

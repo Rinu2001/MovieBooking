@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../controllers/movie_controller.dart';
 import '../models/movie_model.dart';
 import 'movie_detail_page.dart';
+import 'my_booking.dart';
 
 class HomePage extends ConsumerWidget {
   const HomePage({super.key});
@@ -29,6 +30,13 @@ class HomePage extends ConsumerWidget {
           );
         },
       ),
+
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>MyBookingPage())),
+        shape: const CircleBorder(),
+        backgroundColor: Colors.red,
+        child: Icon(Icons.movie_creation_outlined,color: Colors.amber,),
+        ),
     );
   }
 }
